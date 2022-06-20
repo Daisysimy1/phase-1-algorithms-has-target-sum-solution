@@ -1,9 +1,20 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  const checkedNumbers = {}
+
+  for(const num of array){
+    const compliment = target - num
+    if(compliment in checkedNumbers) return true
+
+    checkedNumbers[num] = true
+  }
+  return false
 }
 
 /* 
   Write the Big O time complexity of your function here
+    time: O(n)
+  space: O(n)
 */
 
 /* 
